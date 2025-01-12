@@ -3,33 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Calculator</title>
+    <title>Premium Calculator</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
     <div class="calculator">
-        <input type="text" class="display" disabled 
-            title="Calculator Display" 
-            placeholder="0">
+        <div class="calculator-header">
+            <div class="mode">Standard</div>
+            <div class="history-toggle">
+                <i class="fas fa-history" aria-label="Show History"></i>
+            </div>
+        </div>
+        <div class="display-container">
+            <div class="previous-operation"></div>
+            <input type="text" class="display" disabled 
+                title="Calculator Display" 
+                placeholder="0">
+        </div>
         <div class="buttons">
-            <button class="operator" data-value="clear">C</button>
-            <button class="operator" data-value="/">/</button>
+            <button class="operator special" data-value="clear">AC</button>
+            <button class="operator special" data-value="backspace" aria-label="Backspace">
+                <i class="fas fa-backspace"></i>
+            </button>
+            <button class="operator special" data-value="%">%</button>
+            <button class="operator primary" data-value="/">÷</button>
+            
             <button data-value="7">7</button>
             <button data-value="8">8</button>
             <button data-value="9">9</button>
-            <button class="operator" data-value="*">×</button>
+            <button class="operator primary" data-value="*">×</button>
+            
             <button data-value="4">4</button>
             <button data-value="5">5</button>
             <button data-value="6">6</button>
-            <button class="operator" data-value="-">-</button>
+            <button class="operator primary" data-value="-">−</button>
+            
             <button data-value="1">1</button>
             <button data-value="2">2</button>
             <button data-value="3">3</button>
-            <button class="operator" data-value="+">+</button>
+            <button class="operator primary" data-value="+">+</button>
+            
+            <button data-value="±">±</button>
             <button data-value="0">0</button>
             <button data-value=".">.</button>
-            <button class="operator" data-value="=">=</button>
+            <button class="operator primary" data-value="=">=</button>
         </div>
+    </div>
+
+    <div class="history-panel">
+        <div class="history-header">
+            <h3>History</h3>
+            <button class="clear-history" aria-label="Clear History">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
+        <div class="history-list"></div>
     </div>
     <script src="app.js"></script>
 </body>
